@@ -45,7 +45,7 @@
 
     <!-- Any section element inside of this container is displayed as a slide -->
     <div class="slides">
-        <section data-background="img/back-to-the-future,-car-186203.jpg">
+        <section data-background="img/back_to_the_future_car.jpg">
             <div style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;">
                 <h1>ECMAScript 6 Transpilers</h1>
 
@@ -73,8 +73,8 @@
             <aside class="notes">
                 <ul>
                     <li>Feature frozen</li>
-                    <li>Final draft published this month</li>
-                    <li>Finalized June of this year</li>
+                    <li>Final draft published April 14, 2015</li>
+                    <li>Finalized ~June of this year</li>
                 </ul>
             </aside>
         </section>
@@ -468,18 +468,20 @@ var name = "Bob", time = "today";
             </section>
 
             <section>
-                <p>Currently supports 78% of ES6 standard</p>
+                <p>Currently supports 71% of ES6 standard</p>
 
                 <ul>
                     <li class="fragment">Works well with pipeline tools such as Gulp and Grunt</li>
                     <li class="fragment">Shims and Polyfills are automatically added to the output</li>
-                    <li class="fragment">Great 3rd party tool support for JSX and Browserify</li>
+                    <li class="fragment">Great 3rd party plugin support for JSX, Browserify and Flow</li>
                 </ul>
 
                 <aside class="notes">
                     <ul>
                         <li>Compiling to CommonJS -> Browserify broken</li>
                         <li>Browserify support can be wonky due to static analysis</li>
+                        <li>Shim/Polyfill script</li>
+                        <li>Type safety support</li>
                     </ul>
                 </aside>
             </section>
@@ -501,7 +503,7 @@ var name = "Bob", time = "today";
             </section>
 
             <section>
-                <p>Currently supports 66% of ES6 standard</p>
+                <p>Currently supports 59% of ES6 standard</p>
 
                 <ul>
                     <li class="fragment">Requires runtime script for compiled code</li>
@@ -514,6 +516,40 @@ var name = "Bob", time = "today";
                         <li>Uses additional runtime script w/ polyfills</li>
                         <li>Adds support for ATScript</li>
                         <li>customizable bootstrap script</li>
+                        <li>Used to shim TypeScript</li>
+                    </ul>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2><img height="180" data-src="img/typescript.png" alt="TypeScript"
+                         style="background: none; border: none; box-shadow: none;"></h2>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Created by Microsoft</li>
+                        <li>Furthest behind on ES6 support</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <p>Currently supports 25% of ES6 standard</p>
+
+                <ul>
+                    <li class="fragment">Type safety!</li>
+                    <li class="fragment">Works well with pipeline tools such as Gulp and Grunt</li>
+                    <li class="fragment">Great IDE support Sublime Text, Visual Studio Code and WebStorm</li>
+                </ul>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Used for Angular 2.0 - JS/Dart</li>
+                        <li>DefinelyTyped</li>
+                        <li>Version 1.5 has annotations(decorators) and ES6 modules</li>
+                        <li>async/await version 1.6</li>
                     </ul>
                 </aside>
             </section>
@@ -525,16 +561,10 @@ var name = "Bob", time = "today";
             <aside class="notes">
                 <ul>
                     <li>Some idiosyncrasies</li>
-                    <li>Already seen in the wild in some parts <code class="nohighlight">ember - cli</code> - ES6 Module Transpiler</li>
+                    <li>Already seen in the wild in some parts <code class="nohighlight">ember-cli</code> - ES6 Module Transpiler</li>
                     <li><code class="javascript">"use strict";</code></li>
                 </ul>
             </aside>
-        </section>
-
-        <section>
-            <h2>Where to find this talk</h2>
-
-            <p><a href="https://georgemarshall.github.io/es6-transpilers/">https://georgemarshall.github.io/es6-transpilers/</a></p>
         </section>
 
         <section>
@@ -544,17 +574,18 @@ var name = "Bob", time = "today";
                 <li><a href="http://coffeescript.org/">CoffeeScript</a></li>
                 <li><a href="https://www.dartlang.org/">Dart</a></li>
                 <li><a href="https://facebook.github.io/jsx/">JSX</a></li>
-                <li><a href="http://www.typescriptlang.org/">TypeScript</a></li>
                 <li><a href="https://docs.google.com/document/d/11YUzC-1d0V1-Q3V0fQ7KSit97HnZoKVygDxpWzEYW0U/edit">ATScript
-                    (draft)</a></li>
-                <li><a href="http://www.2ality.com/2015/02/soundscript.html">SoundScript (proposal)</a></li>
+                    (Abandoned) [TypeScript 1.5]</a></li>
+                <li><a href="http://www.2ality.com/2015/02/soundscript.html">SaneScript/SoundScript (proposal)</a></li>
             </ul>
 
             <aside class="notes">
                 <ul>
                     <li>Dart - Own VM</li>
-                    <li>JSX - XML additions</li>
+                    <li>JSX - XML additions - Inspired by XHP</li>
                     <li>TypeScript - JS with type checking</li>
+                    <li>SaneScript - Cleaner subset of JavaScript</li>
+                    <li>SaneScript - Gradual type system for JavaScript</li>
                     <li>SoundScript - <code class="javascript">"use stricter";</code> drops JS cruft</li>
                 </ul>
             </aside>
@@ -568,7 +599,14 @@ var name = "Bob", time = "today";
                 <li><a href="https://babeljs.io/">Babel</a> / <a href="https://github.com/lukehoban/es6features">ES6
                     Features</a></li>
                 <li><a href="https://github.com/google/traceur-compiler">Traceuer Compiler</a></li>
+                <li><a href="https://developers.google.com/v8/experiments">Experiments with Strengthening JavaScript</a></li>
             </ul>
+        </section>
+
+        <section>
+            <h2>Where to find this talk</h2>
+
+            <p><a href="https://georgemarshall.github.io/es6-transpilers/">https://georgemarshall.github.io/es6-transpilers/</a></p>
         </section>
 
     </div>
